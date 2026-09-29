@@ -1,69 +1,312 @@
-import Image from "next/image";
+﻿const WHATSAPP_URL =
+  "https://wa.me/5522996133301?text=Ol%C3%A1%20D%C3%A9bora!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio.";
+
+const base = "/debora studio/";
+
+const fotos = [
+  "Captura de tela 2026-09-29 122657.png",
+  "Captura de tela 2026-09-29 122726.png",
+  "Captura de tela 2026-09-29 122751.png",
+  "Captura de tela 2026-09-29 122856.png",
+  "Captura de tela 2026-09-29 123112.png",
+  "Captura de tela 2026-09-29 123153.png",
+  "Captura de tela 2026-09-29 123222.png",
+  "Captura de tela 2026-09-29 125531.png",
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <main>
+      <header className="site-header">
+        <div className="header-inner">
+          <a href="#inicio" className="brand">
+            <span className="brand-script">Débora</span>
+            <span className="brand-subtitle">STUDIO BELLAS UNHAS</span>
+          </a>
+
+          <nav className="desktop-nav">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">O Studio</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#trabalhos">Trabalhos</a>
+            <a href="#contato">Contato</a>
+          </nav>
+
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="header-button"
+          >
+            Agendar
+          </a>
+        </div>
+      </header>
+
+      {/* HERO */}
+      <section id="inicio" className="hero">
+        <video
+          className="hero-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        >
+          <source src={`${base}video hero.mp4`} type="video/mp4" />
+        </video>
+
+        <div className="hero-overlay" />
+
+        <div className="hero-content">
+          <span className="eyebrow">STUDIO BELLAS UNHAS</span>
+
+          <h1>
+            Beleza em cada
+            <span> detalhe.</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+
+          <p>
+            Especialista em unhas em gel, com cuidado, delicadeza
+            e acabamento pensado para você.
+          </p>
+
+          <div className="hero-actions">
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="primary-button"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              Agendar meu horário
+            </a>
+
+            <a href="#trabalhos" className="secondary-button">
+              Ver trabalhos
+            </a>
+          </div>
+        </div>
+
+        <div className="hero-bottom">
+          <span>Especialista em Gel</span>
+          <span>•</span>
+          <span>Atendimento personalizado</span>
+        </div>
+      </section>
+
+      {/* SOBRE */}
+      <section id="sobre" className="about section">
+        <div className="about-image">
+          <img
+            src={`${base}ceo-debora.png`}
+            alt="Débora - Studio Bellas Unhas"
+          />
+        </div>
+
+        <div className="about-content">
+          <span className="section-label">SOBRE O STUDIO</span>
+
+          <h2>
+            Um espaço pensado para
+            <em> valorizar você.</em>
+          </h2>
+
+          <p>
+            Um espaço dedicado ao cuidado e à beleza das suas unhas,
+            com atendimento personalizado e atenção em cada detalhe.
+          </p>
+
+          <p>
+            O Studio Bellas Unhas é especializado em técnicas com gel,
+            buscando unir beleza, delicadeza e um acabamento impecável.
+          </p>
+
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-link"
+          >
+            Quero conhecer o studio →
+          </a>
+        </div>
+      </section>
+
+      {/* IDENTIDADE DO STUDIO */}
+      <section className="identity section">
+        <div className="identity-image">
+          <img
+            src={`${base}descricao.png`}
+            alt="Identidade do Studio Bellas Unhas"
+          />
+        </div>
+
+        <div className="identity-content">
+          <span className="section-label">A ESSÊNCIA DO STUDIO</span>
+
+          <h2>
+            Beleza, cuidado e
+            <em> personalidade.</em>
+          </h2>
+
+          <p>
+            Cada detalhe faz parte da experiência. Do primeiro contato
+            ao resultado final, o objetivo é proporcionar um atendimento
+            cuidadoso, delicado e feito especialmente para você.
+          </p>
+
+          <div className="identity-line" />
+
+          <span className="identity-caption">
+            STUDIO BELLAS UNHAS
+          </span>
+        </div>
+      </section>
+
+      {/* SERVIÇOS */}
+      <section id="servicos" className="services section">
+        <div className="section-heading">
+          <span className="section-label">ESPECIALIDADES</span>
+
+          <h2>
+            Cuidado que começa
+            <em> nos detalhes.</em>
+          </h2>
+
+          <p>
+            Técnicas e acabamentos para deixar suas unhas ainda mais bonitas.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="services-grid">
+          <article className="service-card">
+            <span className="service-number">01</span>
+            <h3>Banho de Gel</h3>
+            <p>
+              Acabamento sofisticado e cuidado especial para suas unhas.
+            </p>
+          </article>
+
+          <article className="service-card">
+            <span className="service-number">02</span>
+            <h3>Fibra de Vidro</h3>
+            <p>
+              Alongamento com visual delicado e acabamento elegante.
+            </p>
+          </article>
+
+          <article className="service-card">
+            <span className="service-number">03</span>
+            <h3>Unhas em Gel</h3>
+            <p>
+              Estrutura e acabamento pensados para o seu estilo.
+            </p>
+          </article>
+
+          <article className="service-card">
+            <span className="service-number">04</span>
+            <h3>Nail Art</h3>
+            <p>
+              Detalhes personalizados para deixar suas unhas únicas.
+            </p>
+          </article>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* PORTFÓLIO */}
+      <section id="trabalhos" className="gallery section">
+        <div className="section-heading">
+          <span className="section-label">PORTFÓLIO</span>
+
+          <h2>
+            Alguns trabalhos
+            <em> do studio.</em>
+          </h2>
+
+          <p>
+            Inspire-se em alguns dos trabalhos realizados pela Débora.
+          </p>
+        </div>
+
+        <div className="gallery-grid">
+          {fotos.map((foto, index) => (
+            <div className="gallery-item" key={foto}>
+              <img
+                src={`${base}${foto}`}
+                alt={`Trabalho de unhas ${index + 1} - Studio Bellas Unhas`}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* AGENDAMENTO */}
+      <section id="contato" className="booking">
+        <div className="booking-inner">
+          <div className="booking-photo">
+            <img
+              src={`${base}whats.png`}
+              alt="Débora - atendimento pelo WhatsApp"
+            />
+          </div>
+
+          <div className="booking-content">
+            <span className="section-label">SEU PRÓXIMO HORÁRIO</span>
+
+            <h2>
+              Pronta para cuidar
+              <br />
+              <em>das suas unhas?</em>
+            </h2>
+
+            <p>
+              Entre em contato pelo WhatsApp e consulte os horários
+              disponíveis.
+            </p>
+
+            <div className="whatsapp-contact">
+              <span className="whatsapp-label">AGENDAMENTOS</span>
+
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="whatsapp-number"
+              >
+                (22) 99613-3301
+              </a>
+
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="primary-button"
+              >
+                Agendar pelo WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="footer">
+        <div>
+          <span className="footer-brand">DÉBORA</span>
+          <span className="footer-subtitle">STUDIO BELLAS UNHAS</span>
+        </div>
+
+        <p>© {new Date().getFullYear()} Studio Bellas Unhas.</p>
+
+        <a
+          href="https://www.instagram.com/studiobellasunhas_ro/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+      </footer>
+    </main>
   );
 }
+
