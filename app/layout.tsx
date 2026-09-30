@@ -1,5 +1,21 @@
 ﻿import type { Metadata } from "next";
+import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import "./globals.css";
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-cormorant",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin", "latin-ext"],
+  weight: ["300", "400", "500", "600"],
+  display: "swap",
+  variable: "--font-montserrat",
+});
 
 export const metadata: Metadata = {
   title: "Débora | Studio Bellas Unhas",
@@ -41,7 +57,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={`${cormorant.variable} ${montserrat.variable}`}>
       <body>{children}</body>
     </html>
   );
